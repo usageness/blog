@@ -7,3 +7,4 @@
 
 !.yarn/cache
 #.pnp.*
+dist/
