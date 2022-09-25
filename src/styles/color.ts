@@ -3,8 +3,10 @@ const COLORS = {
   YELLOW_001: '#847154',
   YELLOW_002: '#caaf1f',
   GREEN_001: '#328400',
-  GRAY_001: '#cccccc',
-  GRAY_002: '#eeeeee',
+  GRAY_001: '#444444',
+  GRAY_002: '#888888',
+  GRAY_003: '#cccccc',
+  GRAY_004: '#eeeeee',
 };
 
 export default COLORS;

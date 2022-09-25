@@ -6,4 +6,10 @@ interface Post {
   content: string;
 }
 
-export { Post };
+interface PostSummary {
+  id: Post['id'];
+  title: Post['title'];
+  subTitle: Post['subTitle'];
+}
+
+export { Post, PostSummary };

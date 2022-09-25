@@ -4,6 +4,7 @@ const Container = styled.div`
   width: 45rem;
 
   margin: auto;
+  padding-bottom: 3rem;
 `;
 
 const Wrapper = styled.div`

@@ -1,16 +1,38 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-import useMount from 'hooks/useMount';
-import { Post } from 'type/global';
+import { Post, PostSummary } from 'type/global';
 import { parseDocument } from 'utils/parse';
+import useMetaTag from './useMetaTag';
 
 const usePost = (id: number) => {
   const [content, setContent] = useState<Post>(undefined);
+  const [prevData, setPrevData] = useState<PostSummary>(undefined);
+  const [nextData, setNextData] = useState<PostSummary>(undefined);
 
-  const loadPost = () => {
+  const loadCurrentPost = () => {
     import(`posts/${id}.md`).then(data => {
       setContent(parseDocument(id, data.default));
     });
+  };
+
+  const loadPrevPost = () => {
+    import(`posts/${id - 1}.md`)
+      .then(data => {
+        setPrevData(parseDocument(id, data.default));
+      })
+      .catch(() => {
+        setPrevData(null);
+      });
+  };
+
+  const loadNextPost = () => {
+    import(`posts/${id + 1}.md`)
+      .then(data => {
+        setNextData(parseDocument(id, data.default));
+      })
+      .catch(() => {
+        setNextData(null);
+      });
   };
 
   // <hr>
@@ -19,15 +41,22 @@ const usePost = (id: number) => {
   // date: 2022-09-14</p>
   // <hr>
 
-  useMount(() => {
-    loadPost();
-  });
+  useEffect(() => {
+    loadCurrentPost();
+    loadPrevPost();
+    loadNextPost();
+    window.scrollTo(0, 0);
+  }, [id]);
+
+  useMetaTag(content);
 
   return {
     title: content?.title,
     subTitle: content?.subTitle,
     date: content?.date,
     content: { __html: content?.content },
+    prevTitle: prevData?.title,
+    nextTitle: nextData?.title,
   };
 };
 

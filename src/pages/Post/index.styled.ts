@@ -60,8 +60,12 @@ const Content = styled.div`
     margin: 0.5rem 0;
     padding: 0.5rem 1.5rem;
 
-    border-left: 0.5rem solid ${COLORS.GRAY_001};
-    background: ${COLORS.GRAY_002};
+    border-left: 0.5rem solid ${COLORS.GRAY_003};
+    background: ${COLORS.GRAY_004};
+  }
+
+  img {
+    max-width: 720px;
   }
 `;
 
@@ -71,4 +75,75 @@ const Date = styled.p`
   color: ${COLORS.YELLOW_001};
 `;
 
-export { Container, Title, Content, Date };
+const Profile = styled.div`
+  display: flex;
+  justify-content: left;
+  gap: 1rem;
+
+  color: ${COLORS.GRAY_001};
+
+  padding: 2rem 0;
+
+  img {
+    border-radius: 70%;
+    overflow: hidden;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+    font-weight: bold;
+
+    padding: 0.5rem 0;
+  }
+
+  p {
+    font-size: 1rem;
+    color: ${COLORS.GRAY_002};
+
+    padding: 0.25rem 0;
+  }
+`;
+
+const Navigator = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const PrevLink = styled.button`
+  text-align: left;
+
+  border-bottom: 0.5rem solid ${COLORS.GREEN_001};
+
+  & > h5 {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+`;
+
+const NextLink = styled.button`
+  text-align: right;
+
+  border-bottom: 0.5rem solid ${COLORS.GREEN_001};
+
+  & > h5 {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+`;
+
+export {
+  Container,
+  Title,
+  Content,
+  Date,
+  Profile,
+  Navigator,
+  PrevLink,
+  NextLink,
+};
