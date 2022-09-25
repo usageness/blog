@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { Post } from 'type/global';
 import { parseDocument } from 'utils/parse';
+import useMetaTag from './useMetaTag';
 
 const useList = () => {
   const [postNumber, setPostNumber] = useState<number>(1);
@@ -26,6 +27,12 @@ const useList = () => {
 
     loadAllPost();
   }, [list]);
+
+  useMetaTag({
+    id: 0,
+    title: '유세지의 식물원',
+    subTitle: '유세지의 식물원입니다',
+  });
 
   return { list };
 };
