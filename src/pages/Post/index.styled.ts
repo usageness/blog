@@ -12,6 +12,7 @@ const Title = styled.h2`
   display: inline;
   font-size: 2rem;
   font-weight: bold;
+  line-height: 2.5rem;
 
   padding: 0.5rem 0;
 `;
@@ -31,6 +32,7 @@ const Content = styled.div`
   h2 {
     font-size: 1.75rem;
     font-weight: bold;
+    line-height: 2.5rem;
 
     padding: 2rem 0 1rem 0;
   }
@@ -42,6 +44,14 @@ const Content = styled.div`
     padding: 2rem 0 1rem 0;
   }
 
+  a {
+    border-bottom: 2px dashed ${COLORS.GRAY_003};
+
+    &:hover {
+      color: ${COLORS.GRAY_002};
+    }
+  }
+
   p {
     padding: 0.5rem 0;
   }
@@ -51,7 +61,10 @@ const Content = styled.div`
   }
 
   li {
-    padding: 0.5rem 0;
+    line-height: 1.5rem;
+
+    margin-left: 1rem;
+    padding: 0.25rem 0;
   }
 
   blockquote {
@@ -65,7 +78,17 @@ const Content = styled.div`
   }
 
   img {
-    max-width: 720px;
+    display: block;
+
+    max-width: calc(100vw - 3.1rem);
+
+    margin: auto;
+  }
+
+  @media (min-width: 45rem) {
+    img {
+      max-width: calc(42rem);
+    }
   }
 `;
 
@@ -78,7 +101,10 @@ const Date = styled.p`
 const Profile = styled.div`
   display: flex;
   justify-content: left;
-  gap: 1rem;
+  align-items: center;
+  gap: 5%;
+
+  word-break: keep-all;
 
   color: ${COLORS.GRAY_001};
 

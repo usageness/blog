@@ -7,7 +7,7 @@ const Container = styled.div`
   flex-direction: column;
   gap: 1rem;
 
-  padding: 1rem;
+  padding: 1rem 0;
 
   cursor: pointer;
 
@@ -30,10 +30,12 @@ const Title = styled.h2`
   display: inline-block;
   font-size: 2rem;
   font-weight: bold;
+  line-height: 2.5rem;
 `;
 
 const SubTitle = styled.p`
   font-size: 1rem;
+  line-height: 1.5rem;
 `;
 
 const Date = styled.p`

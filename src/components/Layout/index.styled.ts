@@ -1,10 +1,10 @@
 import styled from '@emotion/styled';
 
 const Container = styled.div`
-  width: 45rem;
+  max-width: 45rem;
 
   margin: auto;
-  padding-bottom: 3rem;
+  padding: 0 1rem 1rem 1rem;
 `;
 
 const Wrapper = styled.div`

@@ -5,6 +5,10 @@ import COLORS from './color';
 const style = () => css`
   ${emotionReset}
 
+  h1, h2, h3, h4, h5 {
+    word-break: keep-all;
+  }
+
   a {
     text-decoration: none;
     color: ${COLORS.BLACK_001};

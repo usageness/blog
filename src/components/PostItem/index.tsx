@@ -1,4 +1,3 @@
-import { StrictMode } from 'react';
 import * as S from './index.styled';
 
 interface PostItemProps {
