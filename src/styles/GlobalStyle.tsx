@@ -29,6 +29,10 @@ const style = () => css`
 
     cursor: pointer;
   }
+
+  strong {
+    font-weight: bold;
+  }
 `;
 
 function GlobalStyle() {
