@@ -7,4 +7,11 @@
 
 !.yarn/cache
 #.pnp.*
+
+node_modules
+
+# ide files
+.vscode
+.editorconfig
+
 dist/
