@@ -2,6 +2,7 @@ const COLORS = {
   BLACK_001: '#000000',
   YELLOW_001: '#847154',
   YELLOW_002: '#caaf1f',
+  YELLOW_003: '#d3c0a4',
   GREEN_001: '#328400',
   GRAY_001: '#444444',
   GRAY_002: '#888888',

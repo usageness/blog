@@ -1,3 +1,4 @@
+import Footer from 'components/Footer';
 import Header from 'components/Header';
 
 import * as S from './index.styled';
@@ -11,6 +12,7 @@ function Layout({ children }: LayoutProps) {
     <S.Container>
       <Header />
       <S.Wrapper>{children}</S.Wrapper>
+      <Footer />
     </S.Container>
   );
 }
