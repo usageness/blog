@@ -12,8 +12,11 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/,
+        loader: 'esbuild-loader',
+        options: {
+          loader: 'tsx',
+          target: 'es2015',
+        },
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
@@ -57,12 +60,4 @@ module.exports = {
       favicon: './public/favicon.ico',
     }),
   ],
-  devServer: {
-    historyApiFallback: true,
-    static: path.resolve(__dirname, './dist'),
-    port: 3000,
-    client: {
-      logging: 'none',
-    },
-  },
 };

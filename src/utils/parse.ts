@@ -1,9 +1,9 @@
 export const parseDocument = (id: number, rawString: string) => {
   const documentData = rawString.split('<hr>');
   const splitByTitle = documentData[1].split('title: ');
-  const splitBySubTitle = splitByTitle[1].split('\nsubTitle: ');
-  const splitByDate = splitBySubTitle[1].split('\ndate: ');
-  const splitByPtag = splitByDate[1].split('</p>\n');
+  const splitBySubTitle = splitByTitle[1].split('subTitle: ');
+  const splitByDate = splitBySubTitle[1].split('date: ');
+  const splitByPtag = splitByDate[1].split('</p>');
 
   return {
     id,

@@ -9,7 +9,9 @@ function Post() {
   const { id } = useParams();
   const { title, date, content, prevTitle, nextTitle } = usePost(Number(id));
 
-  if (!content) return <></>;
+  if (content.__html === undefined) {
+    return <></>;
+  }
 
   return (
     <S.Container>

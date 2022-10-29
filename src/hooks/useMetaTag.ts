@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { PostSummary } from 'type/global';
 import { setMetaTags } from 'utils/metatag';
 
-export const useMetaTag = (content: PostSummary) => {
+export const useMetaTag = (content: PostSummary | null) => {
   useEffect(() => {
     if (!content) return;
 

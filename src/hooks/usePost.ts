@@ -5,9 +5,9 @@ import { parseDocument } from 'utils/parse';
 import useMetaTag from './useMetaTag';
 
 const usePost = (id: number) => {
-  const [content, setContent] = useState<Post>(undefined);
-  const [prevData, setPrevData] = useState<PostSummary>(undefined);
-  const [nextData, setNextData] = useState<PostSummary>(undefined);
+  const [content, setContent] = useState<Post | null>(null);
+  const [prevData, setPrevData] = useState<PostSummary | null>(null);
+  const [nextData, setNextData] = useState<PostSummary | null>(null);
 
   const loadCurrentPost = () => {
     import(`posts/${id}.md`).then(data => {
@@ -56,7 +56,7 @@ const usePost = (id: number) => {
     title: content?.title,
     subTitle: content?.subTitle,
     date: content?.date,
-    content: { __html: content?.content },
+    content: { __html: content ? content.content : '' },
     prevTitle: prevData?.title,
     nextTitle: nextData?.title,
   };
