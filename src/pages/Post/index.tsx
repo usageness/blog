@@ -19,7 +19,9 @@ function Post() {
       <S.Profile>
         <img src={Profile} alt="profile" />
         <div>
-          <h4>유세지</h4>
+          <Link to="/post/1">
+            <h4>유세지</h4>
+          </Link>
           <p>나누고 함께 성장하는 개발자가 되고 싶습니다.</p>
         </div>
       </S.Profile>

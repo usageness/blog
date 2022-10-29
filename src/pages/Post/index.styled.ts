@@ -1,4 +1,5 @@
 import COLORS from 'styles/color';
+import BREAKPOINTS from 'styles/breakpoint';
 
 import styled from '@emotion/styled';
 
@@ -139,27 +140,48 @@ const Profile = styled.div`
 const Navigator = styled.div`
   display: flex;
   justify-content: space-between;
-`;
 
-const PrevLink = styled.button`
-  text-align: left;
-
-  border-bottom: 0.5rem solid ${COLORS.GREEN_001};
-
-  & > h5 {
-    font-size: 1.5rem;
-    font-weight: bold;
+  @media only screen and (max-width: ${BREAKPOINTS.md}px) {
+    flex-direction: column;
+    gap: 1rem;
   }
 `;
 
-const NextLink = styled.button`
-  text-align: right;
+const PostLink = styled.button`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-  border-bottom: 0.5rem solid ${COLORS.GREEN_001};
+  width: 100%;
+  height: 100%;
 
   & > h5 {
     font-size: 1.5rem;
     font-weight: bold;
+
+    border-bottom: 0.5rem solid ${COLORS.GREEN_001};
+
+    @media only screen and (max-width: ${BREAKPOINTS.md}px) {
+      align-items: flex-end;
+
+      font-size: 1.25rem;
+    }
+
+    @media only screen and (max-width: ${BREAKPOINTS.sm}px) {
+      font-size: 1rem;
+
+      border-bottom: 0.25rem solid ${COLORS.GREEN_001};
+    }
+  }
+`;
+
+const PrevLink = styled(PostLink)``;
+
+const NextLink = styled(PostLink)`
+  text-align: right;
+
+  @media only screen and (max-width: ${BREAKPOINTS.md}px) {
+    align-items: flex-end;
   }
 `;
 

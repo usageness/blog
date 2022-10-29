@@ -35,11 +35,13 @@ const usePost = (id: number) => {
       });
   };
 
-  // <hr>
-  // <p>title: 우아한테크코스 레벨3 후기
-  // subTitle: 안녕하세요
-  // date: 2022-09-14</p>
-  // <hr>
+  /** parsing 예시
+   * <hr>
+   * <p>title: 우아한테크코스 레벨3 후기
+   * subTitle: 안녕하세요
+   * date: 2022-09-14</p>
+   * <hr>
+   */
 
   useEffect(() => {
     loadCurrentPost();
