@@ -11,6 +11,8 @@
 - Emotion
 - Yarn Berry
 
+해당 프로젝트는 [보일러 플레이트](https://github.com/usageness/boilerplate)를 사용하여 제작되었습니다.
+
 ---
 
 ![image](https://user-images.githubusercontent.com/28296575/198838771-84438140-d95a-4899-b5bc-35cbaa92184a.png)
