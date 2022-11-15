@@ -1,15 +1,19 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
 import { Post } from 'type/global';
 import { parseDocument } from 'utils/parse';
 import useMetaTag from './useMetaTag';
+import { LoadingContext } from 'contexts/state';
 
 const useList = () => {
+  const { setIsLoading } = useContext(LoadingContext);
   const [postNumber, setPostNumber] = useState<number>(1);
   const [list, setList] = useState<Post[]>([]);
   const [isError, setIsError] = useState<boolean>(false);
 
   const loadAllPost = () => {
+    setIsLoading(true);
+
     if (isError) return;
 
     import(`posts/${postNumber}.md`)
@@ -19,6 +23,7 @@ const useList = () => {
       })
       .catch(() => {
         setIsError(true);
+        setIsLoading(false);
       });
   };
 
