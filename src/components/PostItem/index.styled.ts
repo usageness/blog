@@ -1,6 +1,7 @@
 import COLORS from 'styles/color';
 
 import styled from '@emotion/styled';
+import BREAKPOINTS from 'styles/breakpoint';
 
 const Container = styled.div`
   display: flex;
@@ -24,6 +25,10 @@ const Container = styled.div`
       text-fill-color: transparent;
     }
   }
+
+  @media only screen and (max-width: ${BREAKPOINTS.md}px) {
+    gap: 0.25rem;
+  }
 `;
 
 const Title = styled.h2`
@@ -31,6 +36,11 @@ const Title = styled.h2`
   font-size: 2rem;
   font-weight: bold;
   line-height: 2.5rem;
+
+  @media only screen and (max-width: ${BREAKPOINTS.md}px) {
+    font-size: 1.3rem;
+    line-height: 2rem;
+  }
 `;
 
 const SubTitle = styled.p`

@@ -7,6 +7,10 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+
+  @media only screen and (max-width: ${BREAKPOINTS.md}px) {
+    gap: 0;
+  }
 `;
 
 const Title = styled.h2`
@@ -16,6 +20,11 @@ const Title = styled.h2`
   line-height: 2.5rem;
 
   padding: 0.5rem 0;
+
+  @media only screen and (max-width: ${BREAKPOINTS.md}px) {
+    font-size: 1.3rem;
+    line-height: 2rem;
+  }
 `;
 
 const Content = styled.div`
@@ -26,8 +35,14 @@ const Content = styled.div`
   h1 {
     font-size: 2rem;
     font-weight: bold;
+    line-height: 2.5rem;
 
     padding: 2rem 0 1rem 0;
+
+    @media only screen and (max-width: ${BREAKPOINTS.md}px) {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
   }
 
   h2 {
@@ -36,13 +51,24 @@ const Content = styled.div`
     line-height: 2.5rem;
 
     padding: 2rem 0 1rem 0;
+
+    @media only screen and (max-width: ${BREAKPOINTS.md}px) {
+      font-size: 1.3rem;
+      line-height: 2rem;
+    }
   }
 
   h3 {
     font-size: 1.5rem;
     font-weight: bold;
+    line-height: 2.25rem;
 
     padding: 2rem 0 1rem 0;
+
+    @media only screen and (max-width: ${BREAKPOINTS.md}px) {
+      font-size: 1.1rem;
+      line-height: 1.5rem;
+    }
   }
 
   a {

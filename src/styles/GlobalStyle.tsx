@@ -33,6 +33,11 @@ const style = () => css`
   strong {
     font-weight: bold;
   }
+
+  ::selection {
+    background: ${COLORS.GREEN_001};
+    color: ${COLORS.WHITE_001};
+  }
 `;
 
 function GlobalStyle() {
