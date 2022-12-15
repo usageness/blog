@@ -138,6 +138,8 @@ const Profile = styled.div`
   padding: 2rem 0;
 
   img {
+    width: 128px;
+
     border-radius: 70%;
     overflow: hidden;
   }
