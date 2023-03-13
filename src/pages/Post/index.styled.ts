@@ -13,16 +13,16 @@ const Container = styled.div`
   }
 `;
 
-const Title = styled.h2`
+const Title = styled.h1`
   display: inline;
-  font-size: 2rem;
+  font-size: 2.3rem;
   font-weight: bold;
   line-height: 2.5rem;
 
   padding: 0.5rem 0;
 
   @media only screen and (max-width: ${BREAKPOINTS.md}px) {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     line-height: 2rem;
   }
 `;
@@ -51,6 +51,7 @@ const Content = styled.div`
     line-height: 2.5rem;
 
     padding: 2rem 0 1rem 0;
+    margin-top: 2rem;
 
     @media only screen and (max-width: ${BREAKPOINTS.md}px) {
       font-size: 1.3rem;
@@ -80,7 +81,7 @@ const Content = styled.div`
   }
 
   p {
-    padding: 0.5rem 0;
+    padding: 1rem 0;
   }
 
   ul {
@@ -97,7 +98,7 @@ const Content = styled.div`
   blockquote {
     font-weight: bold;
 
-    margin: 0.5rem 0;
+    margin: 1rem 0;
     padding: 0.5rem 1.5rem;
 
     border-left: 0.5rem solid ${COLORS.GRAY_003};
@@ -109,7 +110,7 @@ const Content = styled.div`
 
     max-width: calc(100vw - 3.1rem);
 
-    margin: auto;
+    margin: 4rem auto;
   }
 
   @media (min-width: 45rem) {
@@ -123,6 +124,15 @@ const Date = styled.p`
   font-size: 1rem;
   font-weight: bold;
   color: ${COLORS.YELLOW_001};
+
+  padding-bottom: 2rem;
+  border-bottom: 0.25rem solid;
+  border-image: linear-gradient(
+    90deg,
+    ${COLORS.GREEN_001} 0%,
+    ${COLORS.YELLOW_002} 100%
+  );
+  border-image-slice: 1;
 `;
 
 const Profile = styled.div`
@@ -136,6 +146,14 @@ const Profile = styled.div`
   color: ${COLORS.GRAY_001};
 
   padding: 2rem 0;
+  margin-top: 2rem;
+  border-top: 0.25rem solid;
+  border-image: linear-gradient(
+    90deg,
+    ${COLORS.GREEN_001} 0%,
+    ${COLORS.YELLOW_002} 100%
+  );
+  border-image-slice: 1;
 
   img {
     width: 128px;
