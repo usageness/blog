@@ -1,6 +1,7 @@
 import usePost from 'hooks/usePost';
 
 import { Link, useParams } from 'react-router-dom';
+import TopButton from 'components/TopButton';
 
 import Profile from 'assets/image/profile.jpg';
 import * as S from './index.styled';
@@ -47,6 +48,7 @@ function Post() {
           </Link>
         )}
       </S.Navigator>
+      <TopButton />
     </S.Container>
   );
 }
