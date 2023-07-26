@@ -32,6 +32,6 @@ module.exports = {
         'newlines-between': 'always',
       },
     ],
-    'no-loop-func': off,
+    'no-loop-func': 'off',
   },
 };
