@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import Tree from 'assets/image/tree.svg';
+
 import * as S from './index.styled';
 
 function Header() {

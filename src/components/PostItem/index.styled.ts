@@ -1,8 +1,8 @@
 'use client';
-import COLORS from 'styles/color';
-import styled from 'styled-components';
-
 import BREAKPOINTS from 'styles/breakpoint';
+import COLORS from 'styles/color';
+
+import styled from 'styled-components';
 
 const Container = styled.div`
   display: flex;

@@ -1,6 +1,7 @@
+import GlobalStyle from 'styles/GlobalStyle';
+
 import Layout from 'components/Layout';
 import StyledComponentsRegistry from 'components/Registry';
-import GlobalStyle from 'styles/GlobalStyle';
 
 export const metadata = {
   openGraph: {

@@ -1,7 +1,9 @@
 import Link from 'next/link';
 
-import PostItem from 'components/PostItem';
 import { Post } from 'type/global';
+
+import PostItem from 'components/PostItem';
+
 import { parseDocument } from 'utils/parse';
 
 const getData = async () => {

@@ -19,8 +19,34 @@ module.exports = {
         groups: ['external', 'builtin', 'internal', ['parent', 'sibling']],
         pathGroups: [
           {
+            pattern: 'next/*',
+            group: 'external',
+            position: 'before',
+          },
+          {
+            pattern: 'next*',
+            group: 'external',
+            position: 'before',
+          },
+
+          {
             pattern: 'react',
             group: 'external',
+            position: 'before',
+          },
+          {
+            pattern: 'hooks/*',
+            group: 'builtin',
+            position: 'before',
+          },
+          {
+            pattern: 'components/*',
+            group: 'builtin',
+            position: 'before',
+          },
+          {
+            pattern: 'utils/*',
+            group: 'builtin',
             position: 'before',
           },
         ],

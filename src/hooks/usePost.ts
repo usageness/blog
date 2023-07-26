@@ -1,4 +1,5 @@
 import { Post, PostSummary } from 'type/global';
+
 import { parseDocument } from 'utils/parse';
 
 const usePost = async (id: number) => {

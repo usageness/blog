@@ -1,12 +1,16 @@
-import Link from 'next/link';
-import Image from 'next/image';
 import { Metadata } from 'next';
 
-import usePost from 'hooks/usePost';
-import TopButton from 'components/TopButton';
-import { parseDocument } from 'utils/parse';
+import Image from 'next/image';
+import Link from 'next/link';
 
 import Profile from 'assets/image/profile.jpg';
+
+import usePost from 'hooks/usePost';
+
+import TopButton from 'components/TopButton';
+
+import { parseDocument } from 'utils/parse';
+
 import * as S from './index.styled';
 
 export async function generateMetadata({

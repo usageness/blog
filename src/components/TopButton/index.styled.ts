@@ -1,5 +1,6 @@
-import styled from 'styled-components';
 import BREAKPOINTS from 'styles/breakpoint';
+
+import styled from 'styled-components';
 
 const Top = styled.button`
   position: fixed;

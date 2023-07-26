@@ -1,6 +1,7 @@
 'use client';
-import styled from 'styled-components';
 import COLORS from 'styles/color';
+
+import styled from 'styled-components';
 
 const Wrapper = styled.div`
   display: flex;
