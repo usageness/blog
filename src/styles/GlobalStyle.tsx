@@ -1,11 +1,16 @@
-import { css, Global } from '@emotion/react';
-import emotionReset from 'emotion-reset';
+'use client';
+import { createGlobalStyle } from 'styled-components';
+import reset from 'styled-reset';
+
 import COLORS from './color';
 
-const style = () => css`
-  ${emotionReset}
-
-  h1, h2, h3, h4, h5 {
+const GlobalStyle = createGlobalStyle`
+  ${reset}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
     word-break: keep-all;
   }
 
@@ -39,9 +44,5 @@ const style = () => css`
     color: ${COLORS.WHITE_001};
   }
 `;
-
-function GlobalStyle() {
-  return <Global styles={style} />;
-}
 
 export default GlobalStyle;

@@ -1,6 +1,6 @@
+'use client';
+import styled from 'styled-components';
 import COLORS from 'styles/color';
-
-import styled from '@emotion/styled';
 
 const Wrapper = styled.div`
   display: flex;

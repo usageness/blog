@@ -1,10 +1,10 @@
-import React from 'react';
+// import React from 'react';
 
-interface LoadingState {
-  isLoading: boolean;
-  setIsLoading: React.Dispatch<React.SetStateAction<boolean>> | (() => void);
-}
+// interface LoadingState {
+//   isLoading: boolean;
+//   setIsLoading: React.Dispatch<React.SetStateAction<boolean>> | (() => void);
+// }
 
-const loadingState: LoadingState = { isLoading: true, setIsLoading: () => {} };
+// const loadingState: LoadingState = { isLoading: true, setIsLoading: () => {} };
 
-export const LoadingContext = React.createContext(loadingState);
+// export const LoadingContext = React.createContext(loadingState);

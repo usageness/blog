@@ -1,3 +1,5 @@
+'use client';
+import Image from 'next/image';
 import { useState } from 'react';
 
 import Top from 'assets/image/top.svg';
@@ -20,7 +22,7 @@ function TopButton() {
       onClick={scrollToTop}
       disabled={isTop}
     >
-      <img src={Top} alt="go to top of page" />
+      <Image src={Top} alt="go to top of page" />
     </S.Top>
   );
 }

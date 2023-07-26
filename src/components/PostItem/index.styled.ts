@@ -1,6 +1,7 @@
+'use client';
 import COLORS from 'styles/color';
+import styled from 'styled-components';
 
-import styled from '@emotion/styled';
 import BREAKPOINTS from 'styles/breakpoint';
 
 const Container = styled.div`

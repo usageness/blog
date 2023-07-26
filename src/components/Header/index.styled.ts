@@ -1,4 +1,5 @@
-import styled from '@emotion/styled';
+'use client';
+import styled from 'styled-components';
 
 const Wrapper = styled.div`
   display: flex;

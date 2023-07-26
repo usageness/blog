@@ -1,19 +1,28 @@
 import Footer from 'components/Footer';
 import Header from 'components/Header';
 
-import * as S from './index.styled';
-
 interface LayoutProps {
   children: React.ReactNode;
 }
 
+const containerStyle = {
+  maxWidth: '45rem',
+  margin: 'auto',
+  padding: '0 1rem 1rem 1rem',
+};
+
+const wrapperStyle = {
+  display: 'flex',
+  flexDirection: 'column',
+};
+
 function Layout({ children }: LayoutProps) {
   return (
-    <S.Container>
+    <div style={containerStyle}>
       <Header />
-      <S.Wrapper>{children}</S.Wrapper>
+      <div style={wrapperStyle as React.CSSProperties}>{children}</div>
       <Footer />
-    </S.Container>
+    </div>
   );
 }
 

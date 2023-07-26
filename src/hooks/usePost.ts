@@ -1,39 +1,34 @@
-import { useEffect, useState } from 'react';
-
 import { Post, PostSummary } from 'type/global';
 import { parseDocument } from 'utils/parse';
-import useMetaTag from './useMetaTag';
 
-const usePost = (id: number) => {
-  const [content, setContent] = useState<Post | null>(null);
-  const [prevData, setPrevData] = useState<PostSummary | null>(null);
-  const [nextData, setNextData] = useState<PostSummary | null>(null);
+const usePost = async (id: number) => {
+  let content: Post | null = null;
+  let prevData: PostSummary | null = null;
+  let nextData: PostSummary | null = null;
 
-  const loadCurrentPost = () => {
-    import(`posts/${id}.md`).then(data => {
-      setContent(parseDocument(id, data.default));
+  content = await import(`posts/${id}.md`)
+    .then(data => {
+      return parseDocument(id, data.default);
+    })
+    .catch(() => {
+      return null;
     });
-  };
 
-  const loadPrevPost = () => {
-    import(`posts/${id - 1}.md`)
-      .then(data => {
-        setPrevData(parseDocument(id, data.default));
-      })
-      .catch(() => {
-        setPrevData(null);
-      });
-  };
+  prevData = await import(`posts/${id - 1}.md`)
+    .then(data => {
+      return parseDocument(id, data.default);
+    })
+    .catch(() => {
+      return null;
+    });
 
-  const loadNextPost = () => {
-    import(`posts/${id + 1}.md`)
-      .then(data => {
-        setNextData(parseDocument(id, data.default));
-      })
-      .catch(() => {
-        setNextData(null);
-      });
-  };
+  nextData = await import(`posts/${id + 1}.md`)
+    .then(data => {
+      return parseDocument(id, data.default);
+    })
+    .catch(() => {
+      return null;
+    });
 
   /** parsing 예시
    * <hr>
@@ -43,14 +38,15 @@ const usePost = (id: number) => {
    * <hr>
    */
 
-  useEffect(() => {
-    loadCurrentPost();
-    loadPrevPost();
-    loadNextPost();
-    window.scrollTo(0, 0);
-  }, [id]);
-
-  useMetaTag(content);
+  if (!content)
+    return {
+      title: '',
+      subTitle: '',
+      date: null,
+      content: { __html: '' },
+      prevTitle: prevData?.title,
+      nextTitle: nextData?.title,
+    };
 
   return {
     title: content?.title,

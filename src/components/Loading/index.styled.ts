@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 import { bounce } from 'components/Animation';
 import COLORS from 'styles/color';
 

@@ -1,4 +1,4 @@
-import { keyframes } from '@emotion/react';
+import { keyframes } from 'styled-components';
 
 const bounce = keyframes`
   0%, 33% {

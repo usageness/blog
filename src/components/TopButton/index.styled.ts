@@ -1,6 +1,5 @@
+import styled from 'styled-components';
 import BREAKPOINTS from 'styles/breakpoint';
-
-import styled from '@emotion/styled';
 
 const Top = styled.button`
   position: fixed;
