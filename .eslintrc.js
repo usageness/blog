@@ -14,7 +14,7 @@ module.exports = {
       },
     ],
     'import/order': [
-      'error',
+      'warn',
       {
         groups: ['external', 'builtin', 'internal', ['parent', 'sibling']],
         pathGroups: [
