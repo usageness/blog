@@ -59,8 +59,8 @@ export default function RootLayout({
         <title>유세지의 식물원</title>
       </head>
       <body>
-        <GlobalStyle />
         <StyledComponentsRegistry>
+          <GlobalStyle />
           <Layout>{children}</Layout>
         </StyledComponentsRegistry>
       </body>

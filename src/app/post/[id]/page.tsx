@@ -33,11 +33,20 @@ export async function generateMetadata({
         content: '',
       };
     });
-
+  // 나중에 이거 참고해서 작업하기 https://developer.twitter.com/en/docs/twitter-for-websites/cards/guides/getting-started
   return {
     title: content.title,
     description: content.subTitle,
     openGraph: {
+      images: [
+        'https://user-images.githubusercontent.com/28296575/198838771-84438140-d95a-4899-b5bc-35cbaa92184a.png',
+      ],
+    },
+    twitter: {
+      site: '@dev_usage',
+      creator: '@dev_usage',
+      title: content.title,
+      description: content.subTitle,
       images: [
         'https://user-images.githubusercontent.com/28296575/198838771-84438140-d95a-4899-b5bc-35cbaa92184a.png',
       ],
