@@ -37,7 +37,11 @@ export async function generateMetadata({
   return {
     title: content.title,
     description: content.subTitle,
+    authors: [{ name: 'usage', url: 'https://github.com/usage' }],
     openGraph: {
+      type: 'article',
+      title: content.title,
+      description: content.subTitle,
       images: [
         'https://user-images.githubusercontent.com/28296575/198838771-84438140-d95a-4899-b5bc-35cbaa92184a.png',
       ],
