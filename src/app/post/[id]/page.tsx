@@ -47,10 +47,10 @@ export async function generateMetadata({
       ],
     },
     twitter: {
-      site: '@dev_usage',
-      creator: '@dev_usage',
+      card: 'summary_large_image',
       title: content.title,
       description: content.subTitle,
+      creator: '@dev_usage',
       images: [
         'https://user-images.githubusercontent.com/28296575/198838771-84438140-d95a-4899-b5bc-35cbaa92184a.png',
       ],
