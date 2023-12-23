@@ -3,14 +3,22 @@ import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
 
 import COLORS from './color';
+import { fontStyle } from './font';
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
+  ${fontStyle}
+
+  body {
+    font-family: 'SCDreamRegular';
+  }
+
   h1,
   h2,
   h3,
   h4,
   h5 {
+    font-family: 'SCDreamBold';
     word-break: keep-all;
   }
 
