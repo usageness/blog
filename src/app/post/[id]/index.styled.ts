@@ -157,14 +157,6 @@ const Profile = styled.div`
   );
   border-image-slice: 1;
 
-  img {
-    width: 128px;
-    height: 128px;
-
-    border-radius: 70%;
-    overflow: hidden;
-  }
-
   div {
     display: flex;
     flex-direction: column;
@@ -183,6 +175,22 @@ const Profile = styled.div`
     color: ${COLORS.GRAY_002};
 
     padding: 0.25rem 0;
+  }
+`;
+
+const ImageWrapper = styled.div`
+  max-height: 128px;
+
+  border-radius: 70%;
+  overflow: hidden;
+  aspect-ratio: 1;
+
+  @media only screen and (max-width: ${BREAKPOINTS.md}px) {
+    min-width: 100px;
+  }
+
+  img {
+    width: 100%;
   }
 `;
 
@@ -240,6 +248,7 @@ export {
   Content,
   Date,
   Profile,
+  ImageWrapper,
   Navigator,
   PrevLink,
   NextLink,

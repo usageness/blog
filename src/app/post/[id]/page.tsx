@@ -74,7 +74,9 @@ export default async function Page({ params }: { params: { id: string } }) {
       <S.Date>{date}</S.Date>
       <S.Content dangerouslySetInnerHTML={content} />
       <S.Profile>
-        <Image src={Profile} alt="profile" />
+        <S.ImageWrapper>
+          <Image src={Profile} alt="profile" />
+        </S.ImageWrapper>
         <div>
           <Link href="/post/1">
             <h4>유세지</h4>
