@@ -14,8 +14,8 @@ const contentsContainerStyle = {
   width: 'calc(100% - 2rem)',
   maxHeight: '100vh',
   padding: '0 1rem 1rem 1rem',
-  OverflowY: 'scroll',
-};
+  overflowY: 'scroll',
+} as React.CSSProperties;
 
 const postAreaContainerStyle = {
   maxWidth: '45rem',
