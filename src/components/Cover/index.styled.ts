@@ -4,19 +4,19 @@ import BREAKPOINTS from 'styles/breakpoint';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  position: relative;
 
-  height: 6rem;
+  width: 100%;
+  aspect-ratio: 3;
+
+  overflow: hidden;
+  border-radius: 15px;
+
+  margin: 2rem 0;
 
   @media only screen and (max-width: ${BREAKPOINTS.md}px) {
-    height: 4rem;
+    margin: 0;
   }
 `;
 
-const SubMenu = styled.h3`
-  font-size: 1.17em;
-`;
-
-export { Wrapper, SubMenu };
+export { Wrapper };

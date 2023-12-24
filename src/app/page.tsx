@@ -1,24 +1,11 @@
-import Image from 'next/image';
 import Link from 'next/link';
 
-import Grass from 'assets/image/grass.jpg';
 import { Post } from 'type/global';
 
+import Cover from 'components/Cover';
 import PostItem from 'components/PostItem';
 
 import { parseDocument } from 'utils/parse';
-
-const ImageWrapperStyle = {
-  position: 'relative',
-
-  width: '100%',
-  aspectRatio: '3',
-
-  overflow: 'hidden',
-  borderRadius: '15px',
-
-  margin: '2rem 0',
-} as React.CSSProperties;
 
 const getData = async () => {
   let postNumber = 1;
@@ -46,16 +33,7 @@ export default async function Page() {
 
   return (
     <>
-      <div style={ImageWrapperStyle}>
-        <Image
-          src={Grass}
-          fill={true}
-          style={{
-            objectFit: 'cover',
-          }}
-          alt="cover"
-        />
-      </div>
+      <Cover />
       {list.map(post => (
         <Link href={`/post/${post.id}`} key={post.id}>
           <PostItem

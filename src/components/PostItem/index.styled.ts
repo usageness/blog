@@ -32,18 +32,6 @@ const Container = styled.div`
   }
 `;
 
-const Title = styled.h2`
-  display: inline-block;
-  font-size: 2rem;
-  font-weight: bold;
-  line-height: 2.5rem;
-
-  @media only screen and (max-width: ${BREAKPOINTS.md}px) {
-    font-size: 1.3rem;
-    line-height: 2rem;
-  }
-`;
-
 const SubTitle = styled.p`
   font-size: 1rem;
   line-height: 1.5rem;
@@ -55,4 +43,4 @@ const Date = styled.p`
   color: ${COLORS.YELLOW_001};
 `;
 
-export { Container, Title, SubTitle, Date };
+export { Container, SubTitle, Date };

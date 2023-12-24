@@ -9,7 +9,7 @@ interface PostItemProps {
 function PostItem({ title, subTitle, date }: PostItemProps) {
   return (
     <S.Container>
-      <S.Title>{title}</S.Title>
+      <h2>{title}</h2>
       <S.SubTitle>{subTitle}</S.SubTitle>
       <S.Date>{date}</S.Date>
     </S.Container>

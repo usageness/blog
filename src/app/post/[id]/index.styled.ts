@@ -18,6 +18,7 @@ const Title = styled.h1`
   display: inline;
   font-size: 2.3rem;
   font-weight: bold;
+  font-family: 'SCDreamBold';
   line-height: 2.5rem;
 
   padding: 0.5rem 0;

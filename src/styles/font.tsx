@@ -4,6 +4,14 @@ const { origin } = window.location;
 
 const fontStyle = css`
   @font-face {
+    font-family: 'SCDreamBlack';
+    src: url('${origin}/SCDreamBlack.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: fallback;
+  }
+
+  @font-face {
     font-family: 'SCDreamBold';
     src: url('${origin}/SCDreamBold.woff2') format('woff2');
     font-weight: bold;
