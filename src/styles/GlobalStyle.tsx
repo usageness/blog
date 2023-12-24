@@ -10,6 +10,8 @@ const GlobalStyle = createGlobalStyle`
   ${fontStyle}
 
   body {
+    max-height: 100vh;
+    overflow-y: hidden;
     font-family: 'SCDreamRegular';
   }
 

@@ -1,27 +1,45 @@
 import Footer from 'components/Footer';
 import Header from 'components/Header';
+import Sidebar from 'components/Sidebar';
 
 interface LayoutProps {
   children: React.ReactNode;
 }
 
-const containerStyle = {
-  maxWidth: '45rem',
-  margin: 'auto',
-  padding: '0 1rem 1rem 1rem',
+const displayContainerStyle = {
+  display: 'flex',
 };
 
-const wrapperStyle = {
+const contentsContainerStyle = {
+  width: 'calc(100% - 2rem)',
+  maxHeight: '100vh',
+  padding: '0 1rem 1rem 1rem',
+  OverflowY: 'scroll',
+};
+
+const postAreaContainerStyle = {
+  maxWidth: '45rem',
+  margin: 'auto',
+};
+
+const postWrapperStyle = {
   display: 'flex',
   flexDirection: 'column',
-};
+  justifyContent: 'center',
+  margin: 'auto',
+} as React.CSSProperties;
 
 function Layout({ children }: LayoutProps) {
   return (
-    <div style={containerStyle}>
-      <Header />
-      <div style={wrapperStyle as React.CSSProperties}>{children}</div>
-      <Footer />
+    <div style={displayContainerStyle}>
+      <Sidebar />
+      <div style={contentsContainerStyle}>
+        <div style={postAreaContainerStyle}>
+          <Header />
+          <div style={postWrapperStyle}>{children}</div>
+          <Footer />
+        </div>
+      </div>
     </div>
   );
 }
