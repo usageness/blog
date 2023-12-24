@@ -1,6 +1,7 @@
+'use client';
 import { css } from 'styled-components';
 
-const { origin } = window.location;
+const origin = typeof window !== 'undefined' ? window.location.origin : '.';
 
 const fontStyle = css`
   @font-face {
