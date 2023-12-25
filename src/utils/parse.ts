@@ -10,6 +10,6 @@ export const parseDocument = (id: number, rawString: string) => {
     title: splitBySubTitle[0],
     subTitle: splitByDate[0],
     date: splitByPtag[0],
-    content: documentData[2],
+    content: documentData.slice(2).join('<hr>'),
   };
 };
