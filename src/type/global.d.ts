@@ -4,6 +4,11 @@ interface Post {
   subTitle: string;
   date: string;
   content: string;
+  navigator: Array<{
+    parsedHeadText: string;
+    parsedId: string;
+    depth: number;
+  }>;
 }
 
 interface PostSummary {

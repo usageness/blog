@@ -3,11 +3,11 @@ import { Post, PostSummary } from 'type/global';
 import { parseDocument } from 'utils/parse';
 
 const usePost = async (id: number) => {
-  let content: Post | null = null;
+  let currentContent: Post | null = null;
   let prevData: PostSummary | null = null;
   let nextData: PostSummary | null = null;
 
-  content = await import(`posts/${id}.md`)
+  currentContent = await import(`posts/${id}.md`)
     .then(data => {
       return parseDocument(id, data.default);
     })
@@ -39,23 +39,25 @@ const usePost = async (id: number) => {
    * <hr>
    */
 
-  if (!content)
+  if (!currentContent)
     return {
       title: '',
       subTitle: '',
-      date: null,
+      date: '',
       content: { __html: '' },
       prevTitle: prevData?.title,
       nextTitle: nextData?.title,
+      navigator: [],
     };
 
   return {
-    title: content?.title,
-    subTitle: content?.subTitle,
-    date: content?.date,
-    content: { __html: content ? content.content : '' },
+    title: currentContent?.title,
+    subTitle: currentContent?.subTitle,
+    date: currentContent?.date,
+    content: { __html: currentContent ? currentContent.content : '' },
     prevTitle: prevData?.title,
     nextTitle: nextData?.title,
+    navigator: currentContent.navigator,
   };
 };
 
