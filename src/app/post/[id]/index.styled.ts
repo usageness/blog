@@ -194,7 +194,7 @@ const ImageWrapper = styled.div`
   }
 `;
 
-const Navigator = styled.div`
+const PostNavigator = styled.div`
   display: flex;
   justify-content: space-between;
 
@@ -242,6 +242,42 @@ const NextLink = styled(PostLink)`
   }
 `;
 
+const HeaderNavigator = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  position: absolute;
+  left: calc(47rem + (100% - 47rem) / 2);
+  bottom: 50vh;
+  transform: translate(50%, 50%);
+
+  background-image: linear-gradient(
+    315deg,
+    ${COLORS.GREEN_001} 0% 5%,
+    ${COLORS.WHITE_001} 5% 95%,
+    ${COLORS.GREEN_003} 95% 100%
+  );
+  background-clip: border-box;
+  border-radius: 4px;
+  padding: 1rem;
+
+  ul > li {
+    margin: 0.75rem 0;
+
+    a {
+      color: ${COLORS.GRAY_003};
+    }
+
+    .current-heading {
+      color: ${COLORS.BLACK_001};
+    }
+  }
+
+  @media only screen and (max-width: ${BREAKPOINTS.xl}px) {
+    display: none;
+  }
+`;
+
 export {
   Container,
   Title,
@@ -249,7 +285,8 @@ export {
   Date,
   Profile,
   ImageWrapper,
-  Navigator,
+  PostNavigator,
+  HeaderNavigator,
   PrevLink,
   NextLink,
 };

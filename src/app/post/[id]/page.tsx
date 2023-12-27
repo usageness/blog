@@ -12,6 +12,7 @@ import TopButton from 'components/TopButton';
 import { parseDocument } from 'utils/parse';
 
 import * as S from './index.styled';
+import PostContent from './PostContent';
 
 export async function generateMetadata({
   params,
@@ -59,20 +60,23 @@ export async function generateMetadata({
 }
 
 export default async function Page({ params }: { params: { id: string } }) {
-  const { title, date, content, prevTitle, nextTitle } = await usePost(
-    Number(params.id),
-  );
+  const { title, date, content, prevTitle, nextTitle, navigator } =
+    await usePost(Number(params.id));
 
   if (content.__html === undefined) {
     return <></>;
   }
+
   // if (window) window.scrollTo(0, 0);
 
   return (
     <S.Container>
-      <S.Title>{title}</S.Title>
-      <S.Date>{date}</S.Date>
-      <S.Content dangerouslySetInnerHTML={content} />
+      <PostContent
+        title={title}
+        date={date}
+        content={content}
+        navigator={navigator}
+      />
       <S.Profile>
         <S.ImageWrapper>
           <Image src={Profile} alt="profile" />
@@ -84,7 +88,7 @@ export default async function Page({ params }: { params: { id: string } }) {
           <p>나누고 함께 성장하는 개발자가 되고 싶습니다.</p>
         </div>
       </S.Profile>
-      <S.Navigator>
+      <S.PostNavigator>
         {prevTitle ? (
           <Link href={`/post/${Number(params.id) - 1}`}>
             <S.PrevLink>
@@ -93,7 +97,7 @@ export default async function Page({ params }: { params: { id: string } }) {
             </S.PrevLink>
           </Link>
         ) : (
-          <div></div>
+          <div />
         )}
         {nextTitle && (
           <Link href={`/post/${Number(params.id) + 1}`}>
@@ -103,7 +107,7 @@ export default async function Page({ params }: { params: { id: string } }) {
             </S.NextLink>
           </Link>
         )}
-      </S.Navigator>
+      </S.PostNavigator>
       <TopButton />
     </S.Container>
   );

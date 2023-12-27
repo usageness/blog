@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const Top = styled.button`
   position: fixed;
   bottom: 1rem;
-  right: 1rem;
+  right: 2rem;
 
   img {
     border-radius: 50%;
