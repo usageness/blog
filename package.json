@@ -10,6 +10,12 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "engines": {
+    "node": ">=16",
+    "yarn": ">=3",
+    "npm": "Please use Yarn",
+    "pnpm": "Please use Yarn"
+  },
   "dependencies": {
     "next": "latest",
     "react": "latest",
