@@ -213,6 +213,8 @@ const PostLink = styled.button`
   height: 100%;
 
   & > h5 {
+    width: fit-content;
+
     font-size: 1.5rem;
     font-weight: bold;
 
@@ -232,7 +234,9 @@ const PostLink = styled.button`
   }
 `;
 
-const PrevLink = styled(PostLink)``;
+const PrevLink = styled(PostLink)`
+  text-align: left;
+`;
 
 const NextLink = styled(PostLink)`
   text-align: right;
