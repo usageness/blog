@@ -1,6 +1,5 @@
 import Footer from 'components/Footer';
 import Header from 'components/Header';
-import Sidebar from 'components/Sidebar';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -32,7 +31,6 @@ const postWrapperStyle = {
 function Layout({ children }: LayoutProps) {
   return (
     <div style={displayContainerStyle}>
-      <Sidebar />
       <div style={contentsContainerStyle}>
         <div style={postAreaContainerStyle}>
           <Header />
