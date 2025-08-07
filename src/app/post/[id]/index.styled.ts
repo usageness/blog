@@ -122,10 +122,9 @@ const Content = styled.div`
   }
 `;
 
-const Date = styled.p`
-  font-size: 1rem;
-  font-weight: bold;
-  color: ${COLORS.YELLOW_001};
+const Info = styled.div`
+  display: flex;
+  justify-content: space-between;
 
   padding-bottom: 2rem;
   border-bottom: 0.25rem solid;
@@ -135,6 +134,18 @@ const Date = styled.p`
     ${COLORS.YELLOW_002} 100%
   );
   border-image-slice: 1;
+`;
+
+const Date = styled.p`
+  font-size: 1rem;
+  font-weight: bold;
+  color: ${COLORS.YELLOW_001};
+`;
+
+const ReadTime = styled.p`
+  font-size: 1rem;
+  font-style: italic;
+  color: ${COLORS.YELLOW_004};
 `;
 
 const Profile = styled.div`
@@ -251,9 +262,9 @@ const HeaderNavigator = styled.div`
   flex-direction: column;
 
   position: absolute;
-  left: calc(47rem + (100% - 47rem) / 2);
+  right: 20px;
   bottom: 50vh;
-  transform: translate(50%, 50%);
+  transform: translate(0, 50%);
 
   background-image: linear-gradient(
     315deg,
@@ -266,10 +277,16 @@ const HeaderNavigator = styled.div`
   padding: 1rem;
 
   ul > li {
+    max-width: 300px;
+
     margin: 0.75rem 0;
 
     a {
       color: ${COLORS.GRAY_003};
+      display: block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .current-heading {
@@ -286,7 +303,9 @@ export {
   Container,
   Title,
   Content,
+  Info,
   Date,
+  ReadTime,
   Profile,
   ImageWrapper,
   PostNavigator,

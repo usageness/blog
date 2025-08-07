@@ -3,6 +3,8 @@ import { createRef, useEffect, useRef, RefObject } from 'react';
 
 import { Post } from 'type/global';
 
+import { calculateReadingTime } from 'utils/post';
+
 import * as S from './index.styled';
 
 interface ImportedPost extends Omit<Post, 'content' | 'id' | 'subTitle'> {
@@ -71,7 +73,12 @@ export default function PostContent({
   return (
     <>
       <S.Title>{title}</S.Title>
-      <S.Date>{date}</S.Date>
+      <S.Info>
+        <S.Date>{date}</S.Date>
+        <S.ReadTime>{`${calculateReadingTime(
+          content.__html,
+        )} min read`}</S.ReadTime>
+      </S.Info>
       <S.HeaderNavigator>
         <ul>
           {navigator.map(({ parsedHeadText, parsedId, depth }, i) => {
