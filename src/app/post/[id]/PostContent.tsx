@@ -82,10 +82,6 @@ export default function PostContent({
       <S.HeaderNavigator>
         <ul>
           {navigator.map(({ parsedHeadText, parsedId, depth }, i) => {
-            parsedId = parsedId.replace(/'/g, '');
-            parsedId = parsedId.replace(/"/g, '');
-            parsedId = parsedId.replace(/,/g, '');
-            parsedId = parsedId.replace(/\?/g, '');
             return (
               <li key={parsedHeadText}>
                 <a

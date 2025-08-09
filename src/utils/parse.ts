@@ -6,9 +6,10 @@ export const parseDocument = (id: number, rawString: string) => {
   const splitByPtag = splitByDate[1].split('</p>');
   let content = documentData.slice(2).join('<hr>');
 
-  // 네비게이션 파싱
+  /** 네비게이션 파싱 */
   let lastTextIndex = 0;
   const headTextArray = [];
+
   while (true) {
     const tagStartPosition = content.indexOf('<h', lastTextIndex);
     if (tagStartPosition === -1) break;
@@ -25,7 +26,7 @@ export const parseDocument = (id: number, rawString: string) => {
     parsedHeadText = parsedHeadText.replace(/&#39;/g, "'");
     parsedHeadText = parsedHeadText.replace(/&quot;/g, '"');
 
-    const parsedId = parsedHeadText.replace(/ /g, '-');
+    const parsedId = getDOMAnchorId(parsedHeadText);
     headTextArray.push({ parsedHeadText, parsedId, depth: headTagDepth });
 
     // h 태그 classname 처리
@@ -36,7 +37,7 @@ export const parseDocument = (id: number, rawString: string) => {
       content.substring(emptyPosition + 1);
 
     textEndPosition = content.indexOf('</h', textStartPosition + 1);
-    lastTextIndex = textEndPosition + 1;
+    lastTextIndex = textEndPosition + 5;
   }
 
   return {
@@ -47,4 +48,12 @@ export const parseDocument = (id: number, rawString: string) => {
     content: content,
     navigator: headTextArray,
   };
+};
+
+export const getDOMAnchorId = (parsedHeadText: string) => {
+  parsedHeadText = parsedHeadText.replace(/[.,/#!$%^&*;:{}=_`'"~?]/g, '');
+  parsedHeadText = parsedHeadText.replace(/\s/g, '-');
+
+  parsedHeadText = parsedHeadText.toLowerCase();
+  return parsedHeadText;
 };
