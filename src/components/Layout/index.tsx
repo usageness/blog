@@ -31,7 +31,7 @@ const postWrapperStyle = {
 function Layout({ children }: LayoutProps) {
   return (
     <div style={displayContainerStyle}>
-      <div style={contentsContainerStyle}>
+      <div id="scroll-container" style={contentsContainerStyle}>
         <div style={postAreaContainerStyle}>
           <Header />
           <div style={postWrapperStyle}>{children}</div>

@@ -25,44 +25,41 @@ export default function PostContent({
   );
 
   useEffect(() => {
-    const headingContent = Array.from(
+    const headingElements = Array.from(
       document.querySelectorAll('.content-heading'),
     );
 
-    const observerCallback: IntersectionObserverCallback = entries => {
-      entries.forEach(entry => {
-        const index = headingContent.findIndex(element => {
-          return element === entry.target;
-        });
+    const scrollContainer = document.getElementById('scroll-container');
+    const SCROLL_OFFSET = 80;
 
-        if (entry.isIntersecting) {
-          headingNavigatorRefs.current.forEach(ref =>
-            ref.current?.classList.remove('current-heading'),
-          );
+    const updateActiveHeading = () => {
+      let activeIndex = -1;
 
-          headingNavigatorRefs.current[index].current?.classList.add(
-            'current-heading',
-          );
+      headingElements.forEach((heading, index) => {
+        const { top } = heading.getBoundingClientRect();
+        if (top <= SCROLL_OFFSET) {
+          activeIndex = index;
         }
       });
+
+      headingNavigatorRefs.current.forEach(ref =>
+        ref.current?.classList.remove('current-heading'),
+      );
+
+      if (activeIndex >= 0) {
+        headingNavigatorRefs.current[activeIndex].current?.classList.add(
+          'current-heading',
+        );
+      }
     };
 
-    const observerOptions: IntersectionObserverInit = {
-      root: null,
-      threshold: 0.5,
-    };
-
-    const observer = new IntersectionObserver(
-      observerCallback,
-      observerOptions,
-    );
-
-    headingContent.forEach(heading => {
-      observer.observe(heading);
+    updateActiveHeading();
+    scrollContainer?.addEventListener('scroll', updateActiveHeading, {
+      passive: true,
     });
 
     return () => {
-      observer.disconnect();
+      scrollContainer?.removeEventListener('scroll', updateActiveHeading);
     };
   }, [navigator]);
 
