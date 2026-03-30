@@ -11,9 +11,14 @@
 node_modules
 
 # ide files
-.vscode
+.vscode/*
+!.vscode/settings.json
 .editorconfig
 
 # build files
 dist/
 .next
+tsconfig.tsbuildinfo
+
+# claude code
+.claude
