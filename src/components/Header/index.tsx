@@ -7,7 +7,7 @@ function Header() {
   return (
     <S.Wrapper>
       <Link href="/">
-        <h1>식물원</h1>
+        <S.Logo>식물원</S.Logo>
       </Link>
       <Link href="/post/1">
         <S.SubMenu>about</S.SubMenu>
