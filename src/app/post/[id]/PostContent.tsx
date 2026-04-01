@@ -80,7 +80,7 @@ export default function PostContent({
         <ul>
           {navigator.map(({ parsedHeadText, parsedId, depth }, i) => {
             return (
-              <li key={parsedHeadText}>
+              <li key={parsedHeadText} data-depth={depth}>
                 <a
                   href={`#${parsedId}`}
                   ref={headingNavigatorRefs.current[i]}
