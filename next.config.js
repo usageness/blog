@@ -1,4 +1,7 @@
 module.exports = {
+  images: {
+    formats: ['image/avif', 'image/webp'],
+  },
   webpack: (
     config,
     { buildId, dev, isServer, defaultLoaders, nextRuntime, webpack },

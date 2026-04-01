@@ -152,7 +152,8 @@ const Content = styled.div`
     margin: 1.25rem 0;
   }
 
-  td, th {
+  td,
+  th {
     border: 1px solid ${COLORS.GRAY_003};
     padding: 0.5rem 0.75rem;
   }
@@ -301,11 +302,21 @@ const HeaderNavigator = styled.div`
   ul > li {
     margin: 0.4rem 0;
 
-    &[data-depth='2'] > a { padding-left: 0.75rem; }
-    &[data-depth='3'] > a { padding-left: 1.5rem; }
-    &[data-depth='4'] > a { padding-left: 2.25rem; }
-    &[data-depth='5'] > a { padding-left: 3rem; }
-    &[data-depth='6'] > a { padding-left: 3.75rem; }
+    &[data-depth='2'] > a {
+      padding-left: 0.75rem;
+    }
+    &[data-depth='3'] > a {
+      padding-left: 1.5rem;
+    }
+    &[data-depth='4'] > a {
+      padding-left: 2.25rem;
+    }
+    &[data-depth='5'] > a {
+      padding-left: 3rem;
+    }
+    &[data-depth='6'] > a {
+      padding-left: 3.75rem;
+    }
 
     a {
       color: ${COLORS.GRAY_002};
