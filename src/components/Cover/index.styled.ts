@@ -15,12 +15,7 @@ const Wrapper = styled.div`
   margin: 2rem 0;
 
   @media only screen and (max-width: ${BREAKPOINTS.md}px) {
-    img {
-      display: none;
-    }
-
-    aspect-ratio: 0;
-    margin: 1rem;
+    display: none;
   }
 `;
 
