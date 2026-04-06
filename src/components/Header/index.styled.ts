@@ -1,6 +1,7 @@
 'use client';
 import BREAKPOINTS from 'styles/breakpoint';
 import COLORS from 'styles/color';
+import TYPOGRAPHY from 'styles/typography';
 
 import styled from 'styled-components';
 
@@ -18,7 +19,7 @@ const Wrapper = styled.div`
 
 const Logo = styled.span`
   font-family: 'SCDreamBold';
-  font-size: 1.2rem;
+  font-size: ${TYPOGRAPHY.size.lg};
   color: ${COLORS.BLACK_001};
   transition: color 0.15s ease;
 
@@ -28,7 +29,7 @@ const Logo = styled.span`
 `;
 
 const SubMenu = styled.span`
-  font-size: 0.9rem;
+  font-size: ${TYPOGRAPHY.size.sm};
   color: ${COLORS.GRAY_002};
   transition: color 0.15s ease;
 

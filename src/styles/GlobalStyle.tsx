@@ -5,6 +5,7 @@ import reset from 'styled-reset';
 import BREAKPOINTS from './breakpoint';
 import COLORS from './color';
 import { fontStyle } from './font';
+import TYPOGRAPHY from './typography';
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
@@ -28,25 +29,23 @@ const GlobalStyle = createGlobalStyle`
   h1 {
     display: inline-block;
     font-family: 'SCDreamBlack';
-    font-size: 2.2rem;
+    font-size: ${TYPOGRAPHY.size['4xl']};
     font-weight: bold;
-    line-height: 2.5rem;
+    line-height: ${TYPOGRAPHY.lineHeight.tight};
 
     @media only screen and (max-width: ${BREAKPOINTS.md}px) {
-      font-size: 1.4rem;
-      line-height: 2rem;
+      font-size: ${TYPOGRAPHY.size['2xl']};
     }
   }
 
   h2 {
     display: inline-block;
-    font-size: 2rem;
+    font-size: ${TYPOGRAPHY.size['3xl']};
     font-weight: bold;
-    line-height: 2.5rem;
+    line-height: ${TYPOGRAPHY.lineHeight.tight};
 
     @media only screen and (max-width: ${BREAKPOINTS.md}px) {
-      font-size: 1.3rem;
-      line-height: 2rem;
+      font-size: ${TYPOGRAPHY.size['xl']};
     }
   }
 
@@ -56,7 +55,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   p {
-    line-height: 1.75rem;
+    line-height: ${TYPOGRAPHY.lineHeight.relaxed};
   }
 
   button {

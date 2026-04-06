@@ -12,7 +12,7 @@
     "prepare": "[ -z \"$CI\" ] && husky || true"
   },
   "lint-staged": {
-    "*.{ts,tsx}": "next lint --fix --file",
+    "*.{ts,tsx}": "eslint --fix",
     "*.{ts,tsx,js,json,md}": "prettier --write"
   },
   "engines": {

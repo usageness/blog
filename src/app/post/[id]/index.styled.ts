@@ -1,6 +1,7 @@
 'use client';
 import BREAKPOINTS from 'styles/breakpoint';
 import COLORS from 'styles/color';
+import TYPOGRAPHY from 'styles/typography';
 
 import styled from 'styled-components';
 
@@ -16,61 +17,61 @@ const Container = styled.div`
 
 const Title = styled.h1`
   display: block;
-  font-size: 2.3rem;
+  font-size: ${TYPOGRAPHY.size['4xl']};
   font-weight: bold;
   font-family: 'SCDreamBold';
-  line-height: 1.3;
+  line-height: ${TYPOGRAPHY.lineHeight.tight};
 
   padding: 1rem 0 0.5rem 0;
 
   @media only screen and (max-width: ${BREAKPOINTS.md}px) {
-    font-size: 1.5rem;
+    font-size: ${TYPOGRAPHY.size['2xl']};
   }
 `;
 
 const Content = styled.div`
-  font-size: 1rem;
-  line-height: 1.85;
+  font-size: ${TYPOGRAPHY.size.base};
+  line-height: ${TYPOGRAPHY.lineHeight.loose};
   word-break: break-word;
   overflow-wrap: break-word;
 
   padding: 1.5rem 0;
 
   h1 {
-    font-size: 1.9rem;
+    font-size: ${TYPOGRAPHY.size['3xl']};
     font-weight: bold;
-    line-height: 1.4;
+    line-height: ${TYPOGRAPHY.lineHeight.snug};
 
     margin: 2.5rem 0 0.75rem 0;
 
     @media only screen and (max-width: ${BREAKPOINTS.md}px) {
-      font-size: 1.4rem;
+      font-size: ${TYPOGRAPHY.size['xl']};
     }
   }
 
   h2 {
-    font-size: 1.5rem;
+    font-size: ${TYPOGRAPHY.size['2xl']};
     font-weight: bold;
-    line-height: 1.4;
+    line-height: ${TYPOGRAPHY.lineHeight.snug};
 
     margin: 2.5rem 0 0.75rem 0;
     padding-bottom: 0.4rem;
     border-bottom: 1px solid ${COLORS.GRAY_004};
 
     @media only screen and (max-width: ${BREAKPOINTS.md}px) {
-      font-size: 1.2rem;
+      font-size: ${TYPOGRAPHY.size.lg};
     }
   }
 
   h3 {
-    font-size: 1.2rem;
+    font-size: ${TYPOGRAPHY.size.xl};
     font-weight: bold;
-    line-height: 1.4;
+    line-height: ${TYPOGRAPHY.lineHeight.snug};
 
     margin: 2rem 0 0.5rem 0;
 
     @media only screen and (max-width: ${BREAKPOINTS.md}px) {
-      font-size: 1.05rem;
+      font-size: ${TYPOGRAPHY.size.base};
     }
   }
 
@@ -101,7 +102,7 @@ const Content = styled.div`
   }
 
   li {
-    line-height: 1.75;
+    line-height: ${TYPOGRAPHY.lineHeight.relaxed};
     padding: 0.2rem 0;
   }
 
@@ -114,7 +115,7 @@ const Content = styled.div`
     border-radius: 0 4px 4px 0;
 
     color: ${COLORS.GRAY_001};
-    font-size: 0.95rem;
+    font-size: ${TYPOGRAPHY.size.sm};
   }
 
   pre {
@@ -123,12 +124,12 @@ const Content = styled.div`
     margin: 1.25rem 0;
     border-radius: 6px;
     background: ${COLORS.GRAY_004};
-    font-size: 0.875rem;
-    line-height: 1.6;
+    font-size: ${TYPOGRAPHY.size.sm};
+    line-height: ${TYPOGRAPHY.lineHeight.normal};
   }
 
   code {
-    font-size: 0.875em;
+    font-size: ${TYPOGRAPHY.size.sm};
   }
 
   pre code {
@@ -169,12 +170,12 @@ const Info = styled.div`
 `;
 
 const Date = styled.p`
-  font-size: 0.9rem;
+  font-size: ${TYPOGRAPHY.size.sm};
   color: ${COLORS.GRAY_002};
 `;
 
 const ReadTime = styled.p`
-  font-size: 0.9rem;
+  font-size: ${TYPOGRAPHY.size.sm};
   color: ${COLORS.GRAY_002};
 `;
 
@@ -199,14 +200,14 @@ const Profile = styled.div`
   }
 
   h4 {
-    font-size: 1.1rem;
+    font-size: ${TYPOGRAPHY.size.lg};
     font-weight: bold;
 
     padding: 0.25rem 0;
   }
 
   p {
-    font-size: 0.9rem;
+    font-size: ${TYPOGRAPHY.size.sm};
     color: ${COLORS.GRAY_002};
 
     padding: 0.1rem 0;
@@ -259,20 +260,20 @@ const PostLink = styled.button`
   }
 
   & > p {
-    font-size: 0.78rem;
+    font-size: ${TYPOGRAPHY.size.xs};
     color: ${COLORS.GREEN_002};
     font-weight: 600;
     letter-spacing: 0.03em;
   }
 
   & > h5 {
-    font-size: 1rem;
+    font-size: ${TYPOGRAPHY.size.base};
     font-weight: bold;
     color: ${COLORS.GRAY_001};
-    line-height: 1.4;
+    line-height: ${TYPOGRAPHY.lineHeight.normal};
 
     @media only screen and (max-width: ${BREAKPOINTS.sm}px) {
-      font-size: 0.9rem;
+      font-size: ${TYPOGRAPHY.size.sm};
     }
   }
 `;
@@ -320,8 +321,8 @@ const HeaderNavigator = styled.div`
 
     a {
       color: ${COLORS.GRAY_002};
-      font-size: 0.78rem;
-      line-height: 1.5;
+      font-size: ${TYPOGRAPHY.size.xs};
+      line-height: ${TYPOGRAPHY.lineHeight.normal};
       display: block;
       white-space: nowrap;
       overflow: hidden;
