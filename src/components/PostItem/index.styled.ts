@@ -15,8 +15,7 @@ const Container = styled.div`
   cursor: pointer;
 
   h2 {
-    font-size: ${TYPOGRAPHY.size.xl};
-    line-height: ${TYPOGRAPHY.lineHeight.normal};
+    ${TYPOGRAPHY.textStyle.itemHeading}
     color: ${COLORS.BLACK_001};
     transition: color 0.15s ease;
   }
@@ -35,14 +34,13 @@ const Container = styled.div`
 `;
 
 const SubTitle = styled.p`
-  font-size: ${TYPOGRAPHY.size.sm};
+  ${TYPOGRAPHY.textStyle.meta}
   color: ${COLORS.GRAY_001};
-  line-height: ${TYPOGRAPHY.lineHeight.normal};
   margin-top: 0.4rem;
 `;
 
 const Date = styled.p`
-  font-size: ${TYPOGRAPHY.size.xs};
+  ${TYPOGRAPHY.textStyle.label}
   color: ${COLORS.GRAY_002};
   margin-top: 0.75rem;
 `;

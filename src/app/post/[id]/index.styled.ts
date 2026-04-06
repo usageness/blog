@@ -17,11 +17,7 @@ const Container = styled.div`
 
 const Title = styled.h1`
   display: block;
-  font-size: ${TYPOGRAPHY.size['4xl']};
-  font-weight: bold;
-  font-family: 'SCDreamBold';
-  line-height: ${TYPOGRAPHY.lineHeight.tight};
-
+  ${TYPOGRAPHY.textStyle.postTitle}
   padding: 1rem 0 0.5rem 0;
 
   @media only screen and (max-width: ${BREAKPOINTS.md}px) {
@@ -30,30 +26,23 @@ const Title = styled.h1`
 `;
 
 const Content = styled.div`
-  font-size: ${TYPOGRAPHY.size.base};
-  line-height: ${TYPOGRAPHY.lineHeight.loose};
+  ${TYPOGRAPHY.textStyle.body}
   word-break: break-word;
   overflow-wrap: break-word;
 
   padding: 1.5rem 0;
 
   h1 {
-    font-size: ${TYPOGRAPHY.size['3xl']};
-    font-weight: bold;
-    line-height: ${TYPOGRAPHY.lineHeight.snug};
-
+    ${TYPOGRAPHY.textStyle.sectionHeading}
     margin: 2.5rem 0 0.75rem 0;
 
     @media only screen and (max-width: ${BREAKPOINTS.md}px) {
-      font-size: ${TYPOGRAPHY.size['xl']};
+      font-size: ${TYPOGRAPHY.size.xl};
     }
   }
 
   h2 {
-    font-size: ${TYPOGRAPHY.size['2xl']};
-    font-weight: bold;
-    line-height: ${TYPOGRAPHY.lineHeight.snug};
-
+    ${TYPOGRAPHY.textStyle.subHeading}
     margin: 2.5rem 0 0.75rem 0;
     padding-bottom: 0.4rem;
     border-bottom: 1px solid ${COLORS.GRAY_004};
@@ -64,10 +53,7 @@ const Content = styled.div`
   }
 
   h3 {
-    font-size: ${TYPOGRAPHY.size.xl};
-    font-weight: bold;
-    line-height: ${TYPOGRAPHY.lineHeight.snug};
-
+    ${TYPOGRAPHY.textStyle.itemHeading}
     margin: 2rem 0 0.5rem 0;
 
     @media only screen and (max-width: ${BREAKPOINTS.md}px) {
@@ -115,7 +101,7 @@ const Content = styled.div`
     border-radius: 0 4px 4px 0;
 
     color: ${COLORS.GRAY_001};
-    font-size: ${TYPOGRAPHY.size.sm};
+    ${TYPOGRAPHY.textStyle.meta}
   }
 
   pre {
@@ -124,8 +110,7 @@ const Content = styled.div`
     margin: 1.25rem 0;
     border-radius: 6px;
     background: ${COLORS.GRAY_004};
-    font-size: ${TYPOGRAPHY.size.sm};
-    line-height: ${TYPOGRAPHY.lineHeight.normal};
+    ${TYPOGRAPHY.textStyle.meta}
   }
 
   code {
@@ -170,12 +155,12 @@ const Info = styled.div`
 `;
 
 const Date = styled.p`
-  font-size: ${TYPOGRAPHY.size.sm};
+  ${TYPOGRAPHY.textStyle.meta}
   color: ${COLORS.GRAY_002};
 `;
 
 const ReadTime = styled.p`
-  font-size: ${TYPOGRAPHY.size.sm};
+  ${TYPOGRAPHY.textStyle.meta}
   color: ${COLORS.GRAY_002};
 `;
 
@@ -186,7 +171,6 @@ const Profile = styled.div`
   gap: 1.25rem;
 
   word-break: keep-all;
-
   color: ${COLORS.GRAY_001};
 
   padding: 1.75rem 0;
@@ -200,16 +184,13 @@ const Profile = styled.div`
   }
 
   h4 {
-    font-size: ${TYPOGRAPHY.size.lg};
-    font-weight: bold;
-
+    ${TYPOGRAPHY.textStyle.uiHeading}
     padding: 0.25rem 0;
   }
 
   p {
-    font-size: ${TYPOGRAPHY.size.sm};
+    ${TYPOGRAPHY.textStyle.meta}
     color: ${COLORS.GRAY_002};
-
     padding: 0.1rem 0;
   }
 `;
@@ -260,17 +241,15 @@ const PostLink = styled.button`
   }
 
   & > p {
-    font-size: ${TYPOGRAPHY.size.xs};
+    ${TYPOGRAPHY.textStyle.label}
     color: ${COLORS.GREEN_002};
-    font-weight: 600;
     letter-spacing: 0.03em;
   }
 
   & > h5 {
-    font-size: ${TYPOGRAPHY.size.base};
-    font-weight: bold;
+    ${TYPOGRAPHY.textStyle.ui}
+    font-weight: ${TYPOGRAPHY.fontWeight.bold};
     color: ${COLORS.GRAY_001};
-    line-height: ${TYPOGRAPHY.lineHeight.normal};
 
     @media only screen and (max-width: ${BREAKPOINTS.sm}px) {
       font-size: ${TYPOGRAPHY.size.sm};
@@ -320,9 +299,8 @@ const HeaderNavigator = styled.div`
     }
 
     a {
+      ${TYPOGRAPHY.textStyle.label}
       color: ${COLORS.GRAY_002};
-      font-size: ${TYPOGRAPHY.size.xs};
-      line-height: ${TYPOGRAPHY.lineHeight.normal};
       display: block;
       white-space: nowrap;
       overflow: hidden;
@@ -336,7 +314,6 @@ const HeaderNavigator = styled.div`
 
     .current-heading {
       color: ${COLORS.GREEN_001};
-      font-weight: 600;
     }
   }
 

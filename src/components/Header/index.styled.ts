@@ -18,8 +18,8 @@ const Wrapper = styled.div`
 `;
 
 const Logo = styled.span`
+  ${TYPOGRAPHY.textStyle.uiHeading}
   font-family: 'SCDreamBold';
-  font-size: ${TYPOGRAPHY.size.lg};
   color: ${COLORS.BLACK_001};
   transition: color 0.15s ease;
 
@@ -29,7 +29,7 @@ const Logo = styled.span`
 `;
 
 const SubMenu = styled.span`
-  font-size: ${TYPOGRAPHY.size.sm};
+  ${TYPOGRAPHY.textStyle.meta}
   color: ${COLORS.GRAY_002};
   transition: color 0.15s ease;
 

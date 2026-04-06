@@ -28,10 +28,7 @@ const GlobalStyle = createGlobalStyle`
 
   h1 {
     display: inline-block;
-    font-family: 'SCDreamBlack';
-    font-size: ${TYPOGRAPHY.size['4xl']};
-    font-weight: bold;
-    line-height: ${TYPOGRAPHY.lineHeight.tight};
+    ${TYPOGRAPHY.textStyle.postTitle}
 
     @media only screen and (max-width: ${BREAKPOINTS.md}px) {
       font-size: ${TYPOGRAPHY.size['2xl']};
@@ -40,12 +37,10 @@ const GlobalStyle = createGlobalStyle`
 
   h2 {
     display: inline-block;
-    font-size: ${TYPOGRAPHY.size['3xl']};
-    font-weight: bold;
-    line-height: ${TYPOGRAPHY.lineHeight.tight};
+    ${TYPOGRAPHY.textStyle.sectionHeading}
 
     @media only screen and (max-width: ${BREAKPOINTS.md}px) {
-      font-size: ${TYPOGRAPHY.size['xl']};
+      font-size: ${TYPOGRAPHY.size.xl};
     }
   }
 
@@ -71,7 +66,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   strong {
-    font-weight: bold;
+    font-weight: ${TYPOGRAPHY.fontWeight.bold};
   }
 
   ::selection {
