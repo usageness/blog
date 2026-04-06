@@ -1,6 +1,9 @@
+const path = require('path');
+
 module.exports = {
   images: {
     formats: ['image/avif', 'image/webp'],
+    imageSizes: [64, 96, 128, 256, 384, 1080],
   },
   webpack: (
     config,
@@ -12,6 +15,9 @@ module.exports = {
         {
           loader: 'html-loader',
           options: { sources: false },
+        },
+        {
+          loader: path.resolve('./scripts/rewrite-img-src-loader.js'),
         },
         {
           loader: 'markdown-loader',
